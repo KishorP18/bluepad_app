@@ -65,7 +65,9 @@ class _ArticleHomeWidgetState extends State<ArticleHomeWidget> {
           var offsetToRevealBottom = viewport.getOffsetToReveal(renderObject, 1.0);
           var offsetToRevealTop = viewport.getOffsetToReveal(renderObject, 0.0);
 
-          if (offsetToRevealBottom.offset > scroll.metrics.pixels ||
+
+
+          if ((offsetToRevealBottom.offset-70) > scroll.metrics.pixels ||
               scroll.metrics.pixels > offsetToRevealTop.offset) {
             if (fabOpacity == 0.0) {
               setState(() {
