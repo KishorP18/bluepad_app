@@ -123,7 +123,13 @@ class _ArticleHomeWidgetState extends State<ArticleHomeWidget> {
           ),
         ),
       ),
-      bottomNavigationBar:fabOpacity==0.0?SizedBox(height: 70,):CommentsAndLikeTab(),
+      //bottomNavigationBar:fabOpacity==0.0?SizedBox(height: 70,):CommentsAndLikeTab(),
+      bottomNavigationBar: AnimatedSwitcher(
+        child:fabOpacity==0.0?SizedBox(height: 70,key: UniqueKey(),):CommentsAndLikeTab(key: UniqueKey(),),
+        switchInCurve: Curves.easeIn,
+        switchOutCurve: Curves.easeOut,
+        duration: const Duration(milliseconds: 500),
+      ),
     );
   }
 }
